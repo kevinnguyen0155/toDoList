@@ -9,8 +9,27 @@
   </head>
   <body>
     <div class="app">
-      <div class="app__img"></div>
-      <div class="app__panel"></div>
+      <div class="app__content">
+        <div class="app__head">
+          <img src="./img/3maXWsbJ2mvMkeQSCMgXuT-1200-80.jpg" alt="" />
+        </div>
+        <div class="app__body">
+          <p class="title">My Tasks</p>
+          <p class="date">
+            Dates <span id="month"></span> <span id="day"></span>,
+            <span id="year"></span>
+          </p>
+          <div class="addTask">
+            <input type="text" id="input-add" placeholder="Enter a task" />
+            <span id="btn-add">+</span>
+          </div>
+          <p id="text-toDo">To Do</p>
+          <p id="text-noToDo">You have nothing to do!</p>
+          <div class="line"></div>
+          <p id="text-done">Done</p>
+          <p id="text-noDone">You haven't done any task!</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
