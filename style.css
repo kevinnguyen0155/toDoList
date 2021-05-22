@@ -76,8 +76,8 @@ body {
   position: relative;
 }
 
-.app__body .date {
-  font-size: 0.8rem;
+.app__body #date {
+  font-size: 0.9rem;
   padding: 13px 0;
 }
 
@@ -122,7 +122,7 @@ body {
 #text-done {
   color: #fa396b;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0 10px;
   font-weight: 700;
   letter-spacing: 0.6px;
 }
@@ -159,6 +159,7 @@ body {
   line-height: 40px;
   color: #fff;
   z-index: 2;
+  cursor: pointer;
 }
 
 #btn-close {
@@ -175,13 +176,15 @@ body {
   background: #fa396b;
   border-radius: 50%;
   z-index: 1;
-  display: none;
+  transition: 0.5s ease-in-out;
+  transform: scale(0);
 }
 
 #btn-filter--expand .fa {
   font-size: 1.1rem;
   color: #fff;
   position: absolute;
+  cursor: pointer;
 }
 
 #btn-sortDown {
@@ -204,20 +207,35 @@ body {
   bottom: 10%;
 }
 
-.toDo-task {
+.toDo-task,
+.done-task {
   border: 1px solid #d8e5e0;
   padding: 7px;
   border-radius: 6px;
   width: 90%;
   margin: 10px auto;
-  /* overflow: auto; */
-  /* display: inline-block; */
 }
 
-.toDo-task i {
+.toDo-task i,
+.done-task i {
   float: right;
   padding-left: 10px;
   color: #aaa;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.toDo-task i.fa-trash-alt:hover,
+.done-task i.fa-trash-alt:hover {
+  color: #fa396b;
+}
+
+.toDo-task i.fa-check-circle:hover {
+  color: #25b99a;
+}
+
+.done-task i.fa-check-circle.fas {
+  color: #25b99a;
 }
 
 .toDo-task::after {

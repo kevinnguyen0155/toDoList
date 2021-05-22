@@ -25,27 +25,31 @@
         </div>
         <div class="app__body">
           <p class="title">My Tasks</p>
-          <p class="date">
-            Dates <span id="month"></span> <span id="day"></span>,
-            <span id="year"></span>
-          </p>
+          <p id="date"></p>
           <div class="addTask">
             <input type="text" id="input-add" placeholder="Enter a task" />
             <span id="btn-add">+</span>
           </div>
           <p id="text-toDo">To Do</p>
+          <p id="text-noToDo">You have nothing to do!</p>
           <div id="toDo-list">
-            <p id="text-noToDo">You have nothing to do!</p>
-            <div class="toDo-task">
+            <!-- <div class="toDo-task">
               <span class="toDo-text"></span>
               <i class="far fa-check-circle"></i>
               <i class="fa fa-trash-alt"></i>
-            </div>
+            </div> -->
           </div>
 
           <div class="seperate__line"></div>
           <p id="text-done">Done</p>
           <p id="text-noDone">You haven't done any task!</p>
+          <div id="done-list">
+            <!-- <div class="done-task">
+              <span class="toDo-text"></span>
+              <i class="far fa-check-circle"></i>
+              <i class="fa fa-trash-alt"></i>
+            </div> -->
+          </div>
 
           <div class="filter">
             <i id="btn-filter" class="fa fa-filter"></i>
@@ -61,5 +65,7 @@
         </div>
       </div>
     </div>
+
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>
