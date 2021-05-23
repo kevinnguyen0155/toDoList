@@ -41,11 +41,17 @@ getEle("btn-add").onclick = () => {
   addToDoTask()
 }
 
+//Tạo hàm moveDoneTask global
 const moveDoneTask = (event) => {
   taskList.moveDoneTask(event)
 }
-
 window.moveDoneTask = moveDoneTask
+
+//Tạo hàm deleteTask global
+const deleteTask = (event) => {
+  taskList.deleteTask(event)
+}
+window.deleteTask = deleteTask
 
 // //Hàm expand filter button
 // const expandFilter = () => {

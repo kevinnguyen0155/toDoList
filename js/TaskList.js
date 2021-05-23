@@ -28,6 +28,18 @@ export class TaskList {
     }
   }
 
+  deleteTask(event) {
+    let status = event.currentTarget.getAttribute("data-status")
+    let index = event.currentTarget.getAttribute("data-index")
+    if (status === "toDo") {
+      this.toDoList.splice(index, 1)
+      this.showList(this.toDoList)
+    } else if (status === "done") {
+      this.doneList.splice(index, 1)
+      this.showList(this.doneList)
+    }
+  }
+
   showList(list) {
     let listContent
     let status
@@ -40,41 +52,14 @@ export class TaskList {
     }
 
     listContent.innerHTML = ""
-
     list.forEach(function (task, index) {
       listContent.innerHTML += `<div class="${task.className}">
       <span class="toDo-text">${task.content}</span>
-      <i class="fa fa-check-circle" data-index="${index}" data-status=${status} onclick="moveDoneTask(event)"></i>
-      <i class="fa fa-trash-alt" data-index="${index}"></i>
+      <i class="fa fa-check-circle" data-index=${index} data-status=${status} onclick="moveDoneTask(event)"></i>
+      <i class="fa fa-trash-alt" data-index=${index} data-status=${status} onclick="deleteTask(event)"></i>
     </div>`
     })
   }
-  // deleteToDoTask(id) {
-  //   let taskArray = [...this.toDoList, ...this.doneList]
-  //   let taskDelete
-  //   for (let task of taskArray) {
-  //     if (task.id === id) {
-  //       taskDelete = task
-  //       break
-  //     }
-  //   }
-
-  //   if (taskDelete.className === "toDo-task") {
-  //     let index = this.toDoList.indexOf(taskDelete)
-  //     this.toDoList.splice(index, 1)
-  //     this.showList(this.toDoList)
-  //     if (this.toDoList.length === 0) {
-  //       document.getElementById("text-noToDo").style.display = "block"
-  //     }
-  //   } else if (taskDelete.className === "done-task") {
-  //     let index = this.doneList.indexOf(taskDelete)
-  //     this.doneList.splice(index, 1)
-  //     this.showList(this.doneList)
-  //     if (this.doneList.length === 0) {
-  //       document.getElementById("text-noDone").style.display = "block"
-  //     }
-  //   }
-  // }
 
   // sortTaskAsc() {
   //   if (this.toDoList.length > 1) {
