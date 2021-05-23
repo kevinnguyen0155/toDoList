@@ -41,6 +41,12 @@ getEle("btn-add").onclick = () => {
   addToDoTask()
 }
 
+const moveDoneTask = (event) => {
+  taskList.moveDoneTask(event)
+}
+
+window.moveDoneTask = moveDoneTask
+
 // //Hàm expand filter button
 // const expandFilter = () => {
 //   getEle("btn-filter").style.display = "none"
