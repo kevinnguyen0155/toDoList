@@ -129,20 +129,32 @@ body {
 
 #text-toDo {
   padding-top: 25px;
+  position: relative;
 }
 
-.seperate__line {
+#text-done::before {
+  content: "";
   border-bottom: 1px solid #d8e5e0;
   width: 35%;
-  margin: 25px auto 0;
+  margin: 0px auto 13px;
+  display: block;
 }
 
-#text-noToDo,
-#text-noDone {
+#toDo-list:empty::after {
+  content: "You have nothing to do!";
+}
+
+#done-list:empty::after {
+  content: "You haven't done any task!";
+}
+
+#toDo-list::after,
+#done-list::after {
   font-size: 0.8rem;
   color: #aaa;
   text-align: center;
   letter-spacing: 1px;
+  display: block;
 }
 
 /* FILTER */
