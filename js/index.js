@@ -31,22 +31,9 @@ const addToDoTask = () => {
   }
   let task = new Task(input)
 
-  let flag = true
-  do {
-    task.id = Math.round(Math.random() * (1000 + 1))
-    if (taskList.toDoList.length > 0) {
-      for (let taskCheck of taskList.toDoList) {
-        if (taskCheck.id === "task.id") {
-          flag = false
-          break
-        }
-      }
-    }
-  } while ((flag = false))
-
   taskList.addToDoTask(task)
   getEle("input-add").value = ""
-  console.log(taskList.toDoList)
+  // console.log(taskList.toDoList)
 }
 
 //Gán hàm add task cho nút add
@@ -54,31 +41,31 @@ getEle("btn-add").onclick = () => {
   addToDoTask()
 }
 
-//Hàm expand filter button
-const expandFilter = () => {
-  getEle("btn-filter").style.display = "none"
-  getEle("btn-close").style.display = "block"
-  getEle("btn-filter--expand").style.transform = "scale(1)"
-}
+// //Hàm expand filter button
+// const expandFilter = () => {
+//   getEle("btn-filter").style.display = "none"
+//   getEle("btn-close").style.display = "block"
+//   getEle("btn-filter--expand").style.transform = "scale(1)"
+// }
 
-//Gán hàm expand cho nút filter
-getEle("btn-filter").onclick = expandFilter
+// //Gán hàm expand cho nút filter
+// getEle("btn-filter").onclick = expandFilter
 
-//Hàm close filter button
-const closeFilter = () => {
-  getEle("btn-filter").style.display = "block"
-  getEle("btn-close").style.display = "none"
-  getEle("btn-filter--expand").style.transform = "scale(0)"
-}
+// //Hàm close filter button
+// const closeFilter = () => {
+//   getEle("btn-filter").style.display = "block"
+//   getEle("btn-close").style.display = "none"
+//   getEle("btn-filter--expand").style.transform = "scale(0)"
+// }
 
-//Gán hàm close cho nút close
-getEle("btn-close").onclick = closeFilter
+// //Gán hàm close cho nút close
+// getEle("btn-close").onclick = closeFilter
 
-//Gán hàm sortAsc cho nút AZ
-getEle("btn-sortUp").onclick = () => {
-  taskList.sortTaskDes()
-}
+// //Gán hàm sortAsc cho nút AZ
+// getEle("btn-sortUp").onclick = () => {
+//   taskList.sortTaskDes()
+// }
 
-getEle("btn-sortDown").onclick = () => {
-  taskList.sortTaskAsc()
-}
+// getEle("btn-sortDown").onclick = () => {
+//   taskList.sortTaskAsc()
+// }
