@@ -199,12 +199,12 @@ body {
   cursor: pointer;
 }
 
-#btn-sortDown {
+#btn-sortDes {
   left: 12%;
   top: 30%;
 }
 
-#btn-sortUp {
+#btn-sortAsc {
   left: 12%;
   bottom: 30%;
 }

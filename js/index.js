@@ -42,42 +42,41 @@ getEle("btn-add").onclick = () => {
 }
 
 //Tạo hàm moveDoneTask global
-const moveDoneTask = (event) => {
+
+window.moveDoneTask = (event) => {
   taskList.moveDoneTask(event)
 }
-window.moveDoneTask = moveDoneTask
 
 //Tạo hàm deleteTask global
-const deleteTask = (event) => {
+window.deleteTask = (event) => {
   taskList.deleteTask(event)
 }
-window.deleteTask = deleteTask
 
-// //Hàm expand filter button
-// const expandFilter = () => {
-//   getEle("btn-filter").style.display = "none"
-//   getEle("btn-close").style.display = "block"
-//   getEle("btn-filter--expand").style.transform = "scale(1)"
-// }
+//Hàm expand filter button
+const expandFilter = () => {
+  getEle("btn-filter").style.display = "none"
+  getEle("btn-close").style.display = "block"
+  getEle("btn-filter--expand").style.transform = "scale(1)"
+}
 
-// //Gán hàm expand cho nút filter
-// getEle("btn-filter").onclick = expandFilter
+//Gán hàm expand cho nút filter
+getEle("btn-filter").onclick = expandFilter
 
-// //Hàm close filter button
-// const closeFilter = () => {
-//   getEle("btn-filter").style.display = "block"
-//   getEle("btn-close").style.display = "none"
-//   getEle("btn-filter--expand").style.transform = "scale(0)"
-// }
+//Hàm close filter button
+const closeFilter = () => {
+  getEle("btn-filter").style.display = "block"
+  getEle("btn-close").style.display = "none"
+  getEle("btn-filter--expand").style.transform = "scale(0)"
+}
 
-// //Gán hàm close cho nút close
-// getEle("btn-close").onclick = closeFilter
+//Gán hàm close cho nút close
+getEle("btn-close").onclick = closeFilter
 
-// //Gán hàm sortAsc cho nút AZ
-// getEle("btn-sortUp").onclick = () => {
-//   taskList.sortTaskDes()
-// }
+//Gán hàm sortTask cho các nút sort
+getEle("btn-sortAsc").onclick = () => {
+  taskList.sortTask("asc")
+}
 
-// getEle("btn-sortDown").onclick = () => {
-//   taskList.sortTaskAsc()
-// }
+getEle("btn-sortDes").onclick = () => {
+  taskList.sortTask("des")
+}

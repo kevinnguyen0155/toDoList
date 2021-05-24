@@ -61,65 +61,21 @@ export class TaskList {
     })
   }
 
-  // sortTaskAsc() {
-  //   if (this.toDoList.length > 1) {
-  //     for (let i = 0; i < this.toDoList.length - 1; i++) {
-  //       for (let j = i + 1; j < this.toDoList.length; j++) {
-  //         if (
-  //           this.toDoList[j].content.localeCompare(this.toDoList[i].content) ===
-  //           -1
-  //         ) {
-  //           let temp = this.toDoList[i]
-  //           this.toDoList[i] = this.toDoList[j]
-  //           this.toDoList[j] = temp
-  //         }
-  //       }
-  //     }
-  //   }
-  //   this.showList(this.toDoList)
-  // }
-
-  // sortTaskDes() {
-  //   if (this.toDoList.length > 1) {
-  //     for (let i = 0; i < this.toDoList.length - 1; i++) {
-  //       for (let j = i + 1; j < this.toDoList.length; j++) {
-  //         if (
-  //           this.toDoList[j].content.localeCompare(this.toDoList[i].content) ===
-  //           1
-  //         ) {
-  //           let temp = this.toDoList[i]
-  //           this.toDoList[i] = this.toDoList[j]
-  //           this.toDoList[j] = temp
-  //         }
-  //       }
-  //     }
-  //   }
-  //   this.showList(this.toDoList)
-  // }
-
-  // setCheckButton(id) {
-  //   let btnArray = document.getElementsByName(id)
-  //   for (let i = 0; i < btnArray.length; i++) {
-  //     let btn = btnArray[i]
-  //     if (btn.classList.contains("fa-check-circle")) {
-  //       btn.onclick = function () {
-  //         if (btn.classList.contains("done")) {
-  //           this.removeDoneTask(+btn.getAttribute("name"))
-  //           if (this.doneList.length === 0) {
-  //             document.getElementById("text-noDone").style.display = "block"
-  //           }
-  //         } else {
-  //           this.addDoneTask(+btn.getAttribute("name"))
-  //           if (this.toDoList.length === 0) {
-  //             document.getElementById("text-noToDo").style.display = "block"
-  //           }
-  //         }
-  //       }.bind(this)
-  //     } else if (btn.classList.contains("fa-trash-alt")) {
-  //       btn.onclick = function () {
-  //         this.deleteToDoTask(+btn.getAttribute("name"))
-  //       }.bind(this)
-  //     }
-  //   }
-  // }
+  sortTask(sortType) {
+    if (sortType === "asc") {
+      this.toDoList.sort(function (task, nextTask) {
+        return task.content
+          .toLowerCase()
+          .localeCompare(nextTask.content.toLowerCase())
+      })
+      this.showList(this.toDoList)
+    } else if (sortType === "des") {
+      this.toDoList.sort(function (task, nextTask) {
+        return nextTask.content
+          .toLowerCase()
+          .localeCompare(task.content.toLowerCase())
+      })
+      this.showList(this.toDoList)
+    }
+  }
 }
